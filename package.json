@@ -1,0 +1,15 @@
+{
+  "name": "js-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || exit 0"
+  },
+  "author": "Alderaan-1 <55905384+Alderaan-1@users.noreply.github.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}
