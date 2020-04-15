@@ -10,10 +10,10 @@ exports.fibonacci = (n = 10) => {
   //check if the input is valid
   //let seq = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
 let seq = [0,1];
-  if (typeof(n) == 'number' && n != NaN) {
+  if (typeof(n) == 'number' && !isNaN(n)) {
     if (n > 2) {
-        for (i = 1; i < (n-1); i++){
-            newValue = seq[(i-1)] + seq[i];
+        for (let i = 1; i < (n-1); i++){
+            let newValue = seq[(i-1)] + seq[i];
             seq.push(newValue)
         }
       return seq;
@@ -34,7 +34,7 @@ exports.palindrome = (str, caseSensitive = false) => {
       
        let strArray = cleanStr.split(''); 
        let strRevArray = new Array;
-      for(x = 0, i = (strArray.length-1); i >= 0; i--, x++){
+      for(let x = 0, i = (strArray.length-1); i >= 0; i--, x++){
           //build a new aray of the str backwards
           strRevArray[x] = strArray[i]
       }

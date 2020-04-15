@@ -7,7 +7,7 @@ describe('fibonacci() unit tests', ()=>{
     let x = 10;
     let expected = [0,1,1,2,3,5,8,13,21,34];
     
-    res = app.fibonacci(x);
+    const res = app.fibonacci(x);
     it(`Happy Path: Should return an array type`,  () => {
         assert.isArray(res, 'is not an Array');
     });
@@ -21,20 +21,20 @@ describe('fibonacci() unit tests', ()=>{
     //edge cases
     //function called without providing a character count
     
-    resEdge = app.fibonacci();
+    const resEdge = app.fibonacci();
     it(`Edge Case: no param provided - Should return an array type`,  () => {
-        assert.isArray(res, 'is not an Array');
+        assert.isArray(resEdge, 'is not an Array');
     });
     it(`Edge Case: no param provided - Should return an array of ${x} numbers`,  () => {
-        assert.lengthOf(res,x, `Is not ${x} members in length`);
+        assert.lengthOf(resEdge,x, `Is not ${x} members in length`);
     });
     it(`Edge Case: no param provided - Should return an array of ${expected} members`,  () => {
-        assert.includeMembers(res,expected, `Should return this ${expected} set of members`);
+        assert.includeMembers(resEdge,expected, `Should return this ${expected} set of members`);
     });
 
     //negative tests
     //parameter is not a number
-    resNeg = app.fibonacci(null);
+    const resNeg = app.fibonacci(null);
     it(`Negative: Should return boolean type if param other than positive integer is provided`,  () => {
         assert.isBoolean(resNeg,`Should return false if parm is not a number`);
     });
@@ -43,13 +43,13 @@ describe('fibonacci() unit tests', ()=>{
     });  
 
     //parameter is a negative number
-    resNegInt = app.fibonacci(-5);
+    const resNegInt = app.fibonacci(-5);
     it(`Negative: Should return false if negative number is provided`,  () => {
         assert.strictEqual(resNegInt,false, `Should return false if parm is not a number`);
     });
 
     //parameter is NaN
-    resNaN = app.fibonacci(NaN);
+    const resNaN = app.fibonacci(NaN);
     it(`Negative: Should return boolean false if param is NaN`,  () => {
         assert.strictEqual(resNaN,false, `NaN was provided and response was NOT false`);
     });
@@ -60,8 +60,8 @@ describe('palindrome() unit tests',()=>{
     //must return bool true if the supplied string is a palindrome, false if not
    
     //case insensitive
-    resPalindromeTrue = app.palindrome("Never odd or even?");
-    resPalindromeFalse = app.palindrome("Not a palindrome!");
+    const resPalindromeTrue = app.palindrome("Never odd or even?");
+    const resPalindromeFalse = app.palindrome("Not a palindrome!");
     it(`Happy Path True: Case Insensitive - Should return a bool type`,  () => {
         assert.isBoolean(resPalindromeTrue, 'Happy path strings returned other than bool');
     });
@@ -73,8 +73,8 @@ describe('palindrome() unit tests',()=>{
     });
  
     //case sensitive
-    resPalindromeTrueCS = app.palindrome("Never odd or eveN?", true);
-    resPalindromeFalseCS = app.palindrome("Not a palindrome!", true);
+    const resPalindromeTrueCS = app.palindrome("Never odd or eveN?", true);
+    const resPalindromeFalseCS = app.palindrome("Not a palindrome!", true);
     it(`Happy Path True: Case Sensitive - Should return a bool type`,  () => {
         assert.isBoolean(resPalindromeTrueCS, 'Happy path strings returned other than bool');
     });
@@ -86,7 +86,7 @@ describe('palindrome() unit tests',()=>{
     });
 
     //symbols/whitespace will be removed but the remaining strings will be evaluated.
-    resPalindromeTrueSymbols = app.palindrome("a#a43ac c%^&42 37 4a  aa"); //this is a valid palindrom of aaaccaaa with a bunch of noise
+    const resPalindromeTrueSymbols = app.palindrome("a#a43ac c%^&42 37 4a  aa"); //this is a valid palindrom of aaaccaaa with a bunch of noise
     it(`Edge Case True: Should return a bool type`,  () => {
         assert.isBoolean(resPalindromeTrueSymbols, 'Edge Case True, palindrome with noise characters (^A-z) returned  other than bool');
     });
@@ -95,8 +95,8 @@ describe('palindrome() unit tests',()=>{
     });
   
    //must return null if non-string input or if input string is less than 3 characters
-    resPalindromeNullShort = app.palindrome("XX"); // too short
-    resPalindromeNullNotString = app.palindrome(1991); // not a string
+    const resPalindromeNullShort = app.palindrome("XX"); // too short
+    const resPalindromeNullNotString = app.palindrome(1991); // not a string
     it(`Edge Case Null: An integer was provided instead of a string`,  () => {
         assert.isNull(resPalindromeNullShort, `A number type returned not null`);
     });
