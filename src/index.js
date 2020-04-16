@@ -5,7 +5,7 @@
 
 //2. Fibonacci generate x > 2 number of characters 
 //of the fibonacci sequence in an array (where each number is the sum of the previous 2)
-
+"use strict";
 exports.fibonacci = (n = 10) => {
   //check if the input is valid
   //let seq = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
