@@ -2,17 +2,16 @@
 ### A simple set of typical JS challenges solved using TDD using Mocha with Chai. Challenges are chosen to use interesting unit test scenarios rather than challenge difficulty.
 
 Challenges:
-1. Anagram function - see if any of the provieded search strings are anagrams of the target ie: Listen = Silent
-2. Fibonacci generate x > 2 number of characters of the fibonacci sequence in an array (where each number is the sum of the previous 2) - ie: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-3. Palindrome function - check if a string is a palindrome (not using real language) - ie racecar
-4. Wristband checker - A wristband can have 4 patterns returns true if the section can be correctly classified into one of the 4 types, and false otherwise.
+1. [x] Anagram function - see if any of the provieded search strings are anagrams of the target ie: Listen = Silent
+2. [x] Fibonacci generate x > 2 number of characters of the fibonacci sequence in an array (where each number is the sum of the previous 2) - ie: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+3. [x] Palindrome function - check if a string is a palindrome (not using real language) - ie racecar
+4. [x] Wristband checker - A wristband can have 4 patterns returns true if the section can be correctly classified into one of the 4 types, and false otherwise.
 
 > horizontal: each item in a row is identical.
 > vertical: each item in a column is identical.
 > diagonal left: each item is identical to the one on it's upper left or bottom right.
 > diagonal right: each item is identical to the one on it's upper right or bottom left.
 > You are shown an incomplete section of a wristband.
-
 
 5. All Subsets that Add to a Value a function that returns all subarrays in an array that sum to a particular value. 
 

@@ -28,7 +28,6 @@ function _checkCol(arr) {
 }
 
 function _diagRight(arr) {
-  
   let mLen = arr[0].length - 1;
   let res = new Array();
   arr.forEach((element, key) => {
@@ -51,23 +50,26 @@ function _diagRight(arr) {
 }
 
 function _diagLeft(arr) {
-  arr = [
-    ["A", "B", "C"],
-    ["D", "s", "F"],
-    ["C", "H", "I"],
-    ["J", "K", "L"],
-  ];
   let mLen = arr[0].length - 1;
   let res = new Array();
-  for (let y = 0, x = mLen; x > 0; x--, y++) {
-    if (arr[y][x] === arr[y + 1][x - 1]) {
-      res[y] = true;
+  arr.forEach((element, key) => {
+    res[key] = [];
+    for (let y = key, x = 0; x < mLen; x++, y++) {
+      if (y > arr.length - 2) continue;
+      if (arr[y][x] === arr[y + 1][x + 1]) {
+        res[key][y] = true;
+      }
     }
-  }
+  });
+  let returnArray = [];
 
-  return res.length == mLen;
+  res.map((element, key) => {
+    let cleanRes = res[key].filter((e) => e !== null);
+    returnArray[key] = cleanRes.length === mLen;
+    
+  });
+  return returnArray.findIndex((e) => e === true) > -1;
 }
-
 export function wristband(input) {
   //check the input is an array
   if (!Array.isArray(input)) {
