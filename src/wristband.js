@@ -1,3 +1,4 @@
+"use strict";
 function _checkRow(arr) {
   let isEqual = true;
   arr.forEach((element) => {
