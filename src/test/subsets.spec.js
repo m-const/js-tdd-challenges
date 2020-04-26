@@ -26,7 +26,7 @@ getSubsets([-3, -2, -1, 0, 1, 2, 3], 2)
   [-2, -1, 0, 2, 3],
   [-3, -1, 0, 1, 2, 3]
 ]
-//Examples
+
 getSubsets([-1, 0, 1, 2], 2) ➞ [[2], [0, 2], [-1, 1, 2], [-1, 0, 1, 2]]
 
 getSubsets([-1, 0, 1, 2], 3) ➞ [[1, 2], [0, 1, 2]]
@@ -41,46 +41,52 @@ getSubsets([-1, 0, 1, 2], 4) ➞ []
 
 describe("Subsets() unit tests", () => {
   describe("Happy Path", () => {
-    // const res = getSubsets([
-    //   ["A", "A"],
-    //   ["B", "B"],
-    //   ["C", "C"],
-    // ]);
+    const res = subsets([-3, -2, -1, 0, 1, 2, 3], 2);
+    const expRes = [
+      [2],
+      [-1, 3],
+      [0, 2],
+      [-3, 2, 3],
+      [-2, 1, 3],
+      [-1, 0, 3],
+      [-1, 1, 2],
+      [-3, 0, 2, 3],
+      [-2, -1, 2, 3],
+      [-2, 0, 1, 3],
+      [-1, 0, 1, 2],
+      [-3, -1, 1, 2, 3],
+      [-2, -1, 0, 2, 3],
+      [-3, -1, 0, 1, 2, 3],
+    ];
+    it(`Should return  Array`, () => {
+      assert.isArray(res, "Returned other than Array");
+    });
+    it(`Should return 2 dimensional array`, () => {
+      assert.isArray(res[0], "is not a 2d array");
+    });
 
-    // getSubsets([-3, -2, -1, 0, 1, 2, 3], 2)
-    // [ 
-    //   [2],
-    //   [-1, 3],
-    //   [0, 2],
-    //   [-3, 2, 3],
-    //   [-2, 1, 3],
-    //   [-1, 0, 3],
-    //   [-1, 1, 2],
-    //   [-3, 0, 2, 3],
-    //   [-2, -1, 2, 3],
-    //   [-2, 0, 1, 3],
-    //   [-1, 0, 1, 2],
-    //   [-3, -1, 1, 2, 3],
-    //   [-2, -1, 0, 2, 3],
-    //   [-3, -1, 0, 1, 2, 3]
-    // ]
-    // //Examples
-    // getSubsets([-1, 0, 1, 2], 2) ➞ [[2], [0, 2], [-1, 1, 2], [-1, 0, 1, 2]]
-    
-    // getSubsets([-1, 0, 1, 2], 3) ➞ [[1, 2], [0, 1, 2]]
-    
-    // getSubsets([1, 2, 3, 4], 5) ➞ [[1, 4], [2, 3]]
-    
-    // getSubsets([-1, 0, 1, 2], 4) ➞ []
+    it(`Should return 14 elements in 2nd array dimension`, () => {
+      assert.equal(res.length, 14, "Returned other than 14 2d elements");
+    });
 
-
-    // //happy path validations
-    // it(`Should return  Bool`, () => {
-    //   assert.isBoolean(res, "Returned other than Boolean");
-    // });
-    // it(`Should return true`, () => {
-    //   assert.isTrue(res, "Returned not true");
-    // });
+    for (let x = 0; x < expRes.length; x++) {
+      it(`return element [${x}] should be ${expRes[x]}`, () => {
+        assert.includeDeepOrderedMembers(
+          expRes[x],
+          res[x],
+          `return element [${x}] is  ${res[x]}`
+        );
+      });
+    }
   });
- 
+  describe("Negative Path", () => {
+    const res = subsets([-1, 0, 1, 2], 4);
+
+    it(`Should return  Array`, () => {
+      assert.isArray(res, "Returned other than Array");
+    });
+    it(`Should return an empty array`, () => {
+      assert.isUndefined(res[0], "is not undefined");
+    });
+  });
 });
