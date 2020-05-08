@@ -80,13 +80,18 @@ describe("Subsets() unit tests", () => {
     }
   });
   describe("Negative Path", () => {
-    const res = subsets([-1, 0, 1, 2], 4);
+    const resNeg = subsets([-1, 0, 1, 2], 4);
 
     it(`Should return  Array`, () => {
-      assert.isArray(res, "Returned other than Array");
+      assert.isArray(resNeg, "Returned other than Array");
     });
     it(`Should return an empty array`, () => {
-      assert.isUndefined(res[0], "is not undefined");
+      assert.isUndefined(resNeg[0], "is not undefined");
+    });
+    const resNegLong = subsets([-1, 0, 1, 2,3,5,6,89,456,9,8,23,56,89,78,45,12,89,56,54,32,65,78,-80,-99], 4);
+
+    it(`Input arrays longer than 20 should return false`, () => {
+      assert.isFalse(resNegLong, "Returned other than false for long input array");
     });
   });
 });
