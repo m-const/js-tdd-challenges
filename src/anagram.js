@@ -28,7 +28,12 @@ export function anagram(target, search) {
         }
       } else {
         search.forEach((element) => {
-          if (element === target || typeof element !== "string" || element.length <1) return; //skip any array elements that are either, not strings, empty strings or the same as target
+          if (
+            element === target ||
+            typeof element !== "string" ||
+            element.length < 1
+          )
+            return; //skip any array elements that are either, not strings, empty strings or the same as target
 
           let strCompClean = element.replace(/([^A-Z])/gi, "").trim();
           let comp = strCompClean

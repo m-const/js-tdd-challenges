@@ -86,4 +86,3 @@ export function wristband(input) {
     ? true
     : false;
 }
-

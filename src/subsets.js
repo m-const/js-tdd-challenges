@@ -1,7 +1,7 @@
 //solution from https://edabit.com/user/ak5aPiT6QWpmbnPzD
 
 export function subsets(inputArray, targetSum) {
-  //this solution too slow to work on large input arrays
+  //this solution is too slow to work on large input arrays
     if (inputArray.length > 20) return false;
 //get all subsets by first using reduce to 2d array, made of a concatinated array of each element of the reduce accumulator   
   let subsets = inputArray.reduce((acc, curr) => acc.concat(acc.map((ele) => [...ele, curr])), [[]]);
