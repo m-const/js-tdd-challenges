@@ -1,3 +1,5 @@
+//solution from https://edabit.com/user/ak5aPiT6QWpmbnPzD
+
 export function subsets(inputArray, targetSum) {
   //this solution too slow to work on large input arrays
     if (inputArray.length > 20) return false;
