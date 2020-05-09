@@ -1,3 +1,4 @@
+![Unit Tests](https://github.com/m-const/js-tdd-challenges/workflows/Node.js%20CI/badge.svg)
 # JS - Challenges
 ### A set of JS challenges using Mocha with Chai for unit testing. Challenges are chosen to use interesting unit test scenarios rather than challenge difficulty.
 
