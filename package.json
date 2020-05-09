@@ -4,10 +4,9 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha ./src/test --require babel-polyfill --require babel-register",
+    "test": "nyc mocha ./src/test --require babel-polyfill --require babel-register",
     "lint": "eslint ./src/* ./src/test/* --color",
-    "start": "npm-run-all -p test lint",
-    "build": "babel src -d js --ignore src/**/*.spec.js,src/**/*.test.js"
+    "start": "npm-run-all -p test lint"
   },
   "author": "M-CONST <55905384+m-const@users.noreply.github.com>",
   "license": "ISC",

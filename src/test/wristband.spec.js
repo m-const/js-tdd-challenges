@@ -84,4 +84,21 @@ describe("Wristband() unit tests", () => {
       assert.isNull(res, "Returned other than null when non-array input is provided");
     });
     });
+
+    describe("Negative Path - no mathcing pattern", () => {
+      const res = wristband([
+        ["A", "B", "C"],
+        ["B", "T", "A"],
+        ["C", "H", "B"],
+        ["A", "B", "A"],
+      ]);
+  
+      //happy path validations
+      it(`Should return boolean`, () => {
+        assert.isBoolean(res, "Returned other than Boolean");
+      });
+      it(`Should return false when the input is not a valid wristband`, () => {
+        assert.isFalse(res, "Returned not false");
+      });
+    });
 });
